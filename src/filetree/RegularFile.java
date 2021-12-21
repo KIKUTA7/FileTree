@@ -14,6 +14,11 @@ public class RegularFile extends File {
 	public Iterator<File> iterator() {
 		return new Iterator<File>() {
 			private int el = 0;
+
+			public int getEl() {
+				return el;
+			}
+
 			@Override
 			public boolean hasNext() {
               return el == 0;
@@ -22,8 +27,8 @@ public class RegularFile extends File {
 			@Override
 			public File next() throws  NoSuchElementException {
 				el++;
-				if(el - 1 == 0) return new RegularFile(getPath());
-				else throw new NoSuchElementException("hait she oxero");
+				if(el == 1) return new RegularFile(getPath());
+				throw new NoSuchElementException("hait she oxero");
 			}
 		};
 	}
