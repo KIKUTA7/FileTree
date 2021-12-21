@@ -15,6 +15,7 @@ public class FileUtil {
 	public static File toFileRepresentation(Path path) throws IOException {
 
 
+
 			if (path.toFile().isDirectory()) {
 				List<File> files = new LinkedList<>();
 				Files.list(path).forEach(f -> {

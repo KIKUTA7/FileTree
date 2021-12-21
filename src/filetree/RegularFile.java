@@ -19,6 +19,7 @@ public class RegularFile extends File {
 				return el;
 			}
 
+
 			@Override
 			public boolean hasNext() {
               return el == 0;

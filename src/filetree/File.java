@@ -14,6 +14,7 @@ public abstract class File implements Iterable<File> {
 		this.path = path;
 	}
 
+
 	public abstract Iterator<File> iterator();
 
 	public abstract int getHeight();
