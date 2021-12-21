@@ -14,9 +14,8 @@ public class FileUtil {
 
 	public static File toFileRepresentation(Path path) throws IOException {
 
-		try {
 
-			if(path.toFile().isDirectory()) {
+			if (path.toFile().isDirectory()) {
 				List<File> files = new LinkedList<>();
 				Files.list(path).forEach(f -> {
 					try {
@@ -26,45 +25,13 @@ public class FileUtil {
 					}
 				});
 				return new Directory(path, files);
+			} else if(path.toFile().exists()){
+
+				return new RegularFile(path);
 			}
-			else {
-                return new RegularFile(path);
-			}
-
-
-		}
-
-		catch (IOException e )
-		{
-			e.printStackTrace();
-		}
+			  throw new IOException("hait");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-         return null;
 	}
-
 }
