@@ -6,6 +6,7 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+
         try {
             Path p = Path.of("C:\\Users\\beqak\\OneDrive\\Desktop\\folder");
             Directory d = (Directory) FileUtil.toFileRepresentation(p);
